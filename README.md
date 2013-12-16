@@ -1,5 +1,9 @@
 This project documents a Thrift error I'm receiving receiving trying to get Suro up and running.
 
+## Build the World
+
+    mvn clean install
+
 ## Start the Server
 
     java -cp target/my-app-1-jar-with-dependencies.jar com.netflix.suro.SuroServer -m conf/routingmap.json -s conf/sink.json 
