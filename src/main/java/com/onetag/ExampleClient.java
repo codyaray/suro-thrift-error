@@ -12,12 +12,12 @@ public class ExampleClient {
         final Properties clientProperties = new Properties();
         clientProperties.setProperty(ClientConfig.LB_TYPE, "static");
         clientProperties.setProperty(ClientConfig.LB_SERVER, args[0]);
-        clientProperties.setProperty(ClientConfig.CLIENT_TYPE, "sync");
+        clientProperties.setProperty(ClientConfig.CLIENT_TYPE, args[1]);
 
         SuroClient client = new SuroClient(clientProperties);
 
         // send the message
-        for (int i = 0; i < Integer.parseInt(args[1]); ++i) {
+        for (int i = 0; i < Integer.parseInt(args[2]); ++i) {
             client.send(new Message("routingKey", "testMessage".getBytes()));
         }
 
